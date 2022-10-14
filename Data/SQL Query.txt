@@ -1,0 +1,45 @@
+SELECT 
+	DATE_PART('month', order_date) as bulan,
+	DATE_PART('year', order_date) as tahun,
+	SUM(profit) AS profit,
+	CASE WHEN DATE_PART('month', order_date) = 1 THEN 'Jan'
+		WHEN DATE_PART('month', order_date) = 2 THEN 'Feb'
+		WHEN DATE_PART('month', order_date) = 3 THEN 'Mar'
+		WHEN DATE_PART('month', order_date) = 4 THEN 'Apr'
+		WHEN DATE_PART('month', order_date) = 5 THEN 'May'
+		WHEN DATE_PART('month', order_date) = 6 THEN 'Jun'
+		WHEN DATE_PART('month', order_date) = 7 THEN 'Jul'
+		WHEN DATE_PART('month', order_date) = 8 THEN 'Aug'
+		WHEN DATE_PART('month', order_date) = 9 THEN 'Sep'
+		WHEN DATE_PART('month', order_date) = 10 THEN 'Oct'
+		WHEN DATE_PART('month', order_date) = 11 THEN 'Nov'
+		WHEN DATE_PART('month', order_date) = 12 THEN 'Dec'
+		END AS TxtBulan
+FROM superstore_order
+WHERE order_date BETWEEN '2014-01-01' AND '2014-12-31'
+GROUP BY bulan, tahun
+ORDER BY bulan, tahun
+###
+select
+	sum(a.profit) as total_profit,
+	b.sub_category
+from superstore_order a
+join superstore_product b
+on a.product_id = b.product_id
+group by b.sub_category
+order by total_profit desc
+~~
+select
+	c.category,
+	sum(subq.quantity)
+from
+(
+	select 
+		product_id,
+		quantity
+	from superstore_order
+	where order_date between '2015-01-01' and '2015-01-31'
+) subq
+join superstore_product c
+on subq.product_id = c.product_id
+group by c.category
