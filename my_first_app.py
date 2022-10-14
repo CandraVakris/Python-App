@@ -32,8 +32,6 @@ if choose == "About":
     
 elif choose == "Data":
     st.title('Data')
-    image = Image.open('data/online store.jpg')
-    st.image(image, caption='Online Store')
     st.markdown('Data yang digunakan adalah data sebuah perusahaan bergerak pada penjualan retail yang disimpan dalam database yang terdiri dari tabel penjualan dan tabel produk.')
     st.markdown('##### Tabel Order')
     order = pd.read_csv('data/superstore_order.csv')
