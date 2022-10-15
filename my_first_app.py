@@ -19,6 +19,8 @@ with st.sidebar:
     )
 if choose == "About":
     st.title('Introduction')
+    image = Image.open('data/analisis data.jpg')
+    st.image(image, caption='Data Analyst')
     st.markdown('Hi, selamat datang di aplikasi portofolio saya tentang data analisis sebelum itu perkenalkan nama saya Vakris Candra Sasmita adalah lulusan S1 Matematika yang tertarik dan memiliki minat besar dalam ilmu data di sini saya akan menampilkan karya dari hasil analisis data yang telah saya pelajari, saya menggunakan bahasa pemrograman Python dan dengan bantuan sebuah library bernama streamlit untuk membuat aplikasi web sederhana untuk menampilkan hasil analisa. Sebelum itu mari simak pembahasan mengenai analisis data, tahap analisis data. Dari aplikasi web ini terdapat menu sidebar yang dapat menampilkan pilihan bahasan dan dengan satu kali klik akan menampilkan isi dari menu tersebut. Langsung saja mari kita mulai.')
     st.markdown('##### Apa itu analisis data?')
     st.markdown('Pengertian Teknik Analisis Data. Teknik analisis data merupakan suatu proses mengolah data menjadi informasi baru. Proses ini dilakukan bertujuan agar karakteristik data menjadi lebih mudah dimengerti dan berguna sebagai solusi bagi suatu permasalahan, khususnya yang berkaitan dengan penelitian. Tetapi analisis data dan data analis merupakan hal yang berbeda data analis adalah seorang yang bekerja untuk melakukan analisis data untuk digunakan dalam keperluan bisnis, pemerintah, kesehatan, lembaga non profit dan masih banyak lagi.')
