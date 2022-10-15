@@ -19,7 +19,7 @@ with st.sidebar:
     )
 if choose == "About":
     st.title('Introduction')
-    image = Image.open('data/analisis data.jpg')
+    image = Image.open('Data/analisis data.jpg')
     st.image(image, caption='Data Analyst')
     st.markdown('Hi, selamat datang di aplikasi portofolio saya tentang data analisis sebelum itu perkenalkan nama saya Vakris Candra Sasmita adalah lulusan S1 Matematika yang tertarik dan memiliki minat besar dalam ilmu data di sini saya akan menampilkan karya dari hasil analisis data yang telah saya pelajari, saya menggunakan bahasa pemrograman Python dan dengan bantuan sebuah library bernama streamlit untuk membuat aplikasi web sederhana untuk menampilkan hasil analisa. Sebelum itu mari simak pembahasan mengenai analisis data, tahap analisis data. Dari aplikasi web ini terdapat menu sidebar yang dapat menampilkan pilihan bahasan dan dengan satu kali klik akan menampilkan isi dari menu tersebut. Langsung saja mari kita mulai.')
     st.markdown('##### Apa itu analisis data?')
@@ -36,7 +36,7 @@ elif choose == "Data":
     st.title('Data')
     st.markdown('Data yang digunakan adalah data sebuah perusahaan bergerak pada penjualan retail yang disimpan dalam database yang terdiri dari tabel penjualan dan tabel produk.')
     st.markdown('##### Tabel Order')
-    order = pd.read_csv('data/superstore_order.csv')
+    order = pd.read_csv('Data/superstore_order.csv')
     order
     st.markdown('Berikut ini penjelasan tentang atribut dari tabel penjualan.')
     st.markdown('1. Order ID : merupakan sebuah kode unik untuk sebuah transaksi pemesanan')
@@ -50,7 +50,7 @@ elif choose == "Data":
     st.markdown('9. Discount : potong harga dari suatu barang')
     st.markdown('10. Profit : laba yang diperoleh dari suatu barang')
     st.markdown('##### Tabel Product')
-    product = pd.read_csv('data/superstore_product.csv')
+    product = pd.read_csv('Data/superstore_product.csv')
     product
     st.markdown('Dan untuk atribut dari tabel produk adalah sebagai berikut ini:')
     st.markdown('1. Product ID : kode unik dari setiap barang')
@@ -60,7 +60,7 @@ elif choose == "Data":
 
 elif choose == "Visualization":
     st.title('Data Visualization')
-    df0 = pd.read_csv('data/superstore_order.csv')
+    df0 = pd.read_csv('Data/superstore_order.csv')
     a1, a2, a3 = st.columns(3)
     a1.metric("Sales",'$2.3M')
     a2.metric("Profit",'$286,397.02')
@@ -70,10 +70,10 @@ elif choose == "Visualization":
     
     st.markdown('Peratama kita akan selidiki laba dan jumlah penjualan barang pada tahun 2014-2017 melalui gambar diagram garis dibawah ini.')
     plt.rcParams["font.family"] = "Sans serif"
-    df1 = pd.read_csv('data/sales2014.csv')
-    df2 = pd.read_csv('data/sales2015.csv')
-    df3 = pd.read_csv('data/sales2016.csv')
-    df4 = pd.read_csv('data/sales2017.csv')
+    df1 = pd.read_csv('Data/sales2014.csv')
+    df2 = pd.read_csv('Data/sales2015.csv')
+    df3 = pd.read_csv('Data/sales2016.csv')
+    df4 = pd.read_csv('Data/sales2017.csv')
     fig = plt.figure(figsize=(10,5))
     plt.plot(df1['txtbulan'],df1['sales'], label='2014')
     plt.plot(df2['txtbulan'],df2['sales'], label='2015')
