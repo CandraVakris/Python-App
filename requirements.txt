@@ -1,3 +1,4 @@
+pip==21.2.2
 pillow==9.1.1
 streamlit==1.10.0
 streamlit-option-menu==0.3.2
