@@ -34,6 +34,8 @@ if choose == "About":
     
 elif choose == "Data":
     st.title('Data')
+    image = Image.open('Data/online store.jpg')
+    st.image(image, caption='Online Store')
     st.markdown('Data yang digunakan adalah data sebuah perusahaan bergerak pada penjualan retail yang disimpan dalam database yang terdiri dari tabel penjualan dan tabel produk.')
     st.markdown('##### Tabel Order')
     order = pd.read_csv('Data/superstore_order.csv')
@@ -91,10 +93,10 @@ elif choose == "Visualization":
                     connectionstyle="angle3,angleA=90,angleB=180"))
     st.pyplot(fig)
     fig = plt.figure(figsize=(10,5))
-    dtf1 = pd.read_csv('data/profit2014.csv')
-    dtf2 = pd.read_csv('data/profit2015.csv')
-    dtf3 = pd.read_csv('data/profit2016.csv')
-    dtf4 = pd.read_csv('data/profit2017.csv')
+    dtf1 = pd.read_csv('Data/profit2014.csv')
+    dtf2 = pd.read_csv('Data/profit2015.csv')
+    dtf3 = pd.read_csv('Data/profit2016.csv')
+    dtf4 = pd.read_csv('Data/profit2017.csv')
     plt.plot(dtf1['txtbulan'],dtf1['profit'], label='2014')
     plt.plot(dtf2['txtbulan'],dtf2['profit'], label='2015')
     plt.plot(dtf3['txtbulan'],dtf3['profit'], label='2016')
@@ -111,7 +113,7 @@ elif choose == "Visualization":
                     connectionstyle="angle3,angleA=90,angleB=180"))
     st.pyplot(fig)
     st.markdown('Pada diagram garis diatas terlihat laba pada bulan Januari 2015 mengalami kerugian tetapi penjualan terlihat lebih besar daripada bulan yang sama pada tahun sebelumnya. akan diselidiki data keuntungan berdasarkan kategori barang yang terjual')    
-    dpp = pd.read_csv('data/profitcategory.csv')
+    dpp = pd.read_csv('Data/profitcategory.csv')
     fig = plt.figure(figsize=(10,5))
     category = dpp['category']
     labels = ["6,4% Furniture",
@@ -135,7 +137,7 @@ elif choose == "Visualization":
     st.markdown('Kategori barang yang menyumbang keuntungan terbesar adalah dari kategori Technology dan kategori Office Supplies.')
 
     fig = plt.figure(figsize=(10,5))
-    jd = pd.read_csv('data/Jan2015.csv')
+    jd = pd.read_csv('Data/Jan2015.csv')
     category = jd['category']
     labels = ["88 Unit Furniture",
             "110 Unit Office Supplies",
@@ -157,7 +159,7 @@ elif choose == "Visualization":
     st.pyplot(fig)
 
     fig = plt.figure(figsize=(10,5))
-    dsc = pd.read_csv('data/rata_discountctgr.csv')
+    dsc = pd.read_csv('Data/rata_discountctgr.csv')
     bar = plt.bar(dsc['category'],dsc['rata_discount'], color="orange")
     plt.title('Rata-rata Discount Kategori Barang Januari 2015')
     plt.annotate('35%', fontsize=16, xy=(0, 0.25), xytext=(0, 0.25))
@@ -168,7 +170,7 @@ elif choose == "Visualization":
     st.markdown('###### Analisis Korelasi')
     st.markdown('Pada analisis sebelumnya adanya fakta bahwa keuntungan pada bulan Januari 2015 mengalami kerugian dengan diikuti bahwa penjualan tertinggi pada kategori peralatan kantor dan penjualan terendah pada teknologi sebaliknya rataan diskon tertinggi pada kategori teknologi akan diselidiki apakah faktor diskon mempengaruhi hasil laba yang didapat dengan analisis korelasi. analisis korelasi merupakan metode statistik untuk mengetahui adanya hubungan dari dua variabel dengan rentang nilai korelasi antara (-1,1) dimana nilai mendekati 0 artinya korelasi lemah atau tidak ada hubungan dan mendekati -1 dan 1 korelasi kuat.')
     fig = plt.figure(figsize=(10,5))
-    dp = pd.read_csv('data/discpro.csv')
+    dp = pd.read_csv('Data/discpro.csv')
     corr = plt.scatter(dp['profit'],dp['discount'], color='c')
     plt.plot(np.linspace(-4000, 4000),
     np.linspace(0.8, 0), ':r')
